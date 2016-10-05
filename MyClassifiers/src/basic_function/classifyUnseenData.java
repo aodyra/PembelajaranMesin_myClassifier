@@ -5,10 +5,17 @@
  */
 package basic_function;
 
+import weka.classifiers.Classifier;
+import weka.core.Instance;
+
 /**
  *
  * @author User
  */
 public class classifyUnseenData {
+    
+    public static double classifyUnseen(Classifier cl,Instance inst) throws Exception{
+        return cl.classifyInstance(inst);
+    }
     
 }
