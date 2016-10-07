@@ -16,9 +16,10 @@ import weka.core.Instances;
  */
 public class crossValidation {
     
-    public static void crossValidation(Instances ins, Classifier tree) throws Exception{
+    public static void crossValidation(Instances ins, Classifier tree, int fold) throws Exception{
         Evaluation eval = new Evaluation(ins);
-        eval.crossValidateModel(tree, ins, 10, new Random(1));
+        eval.crossValidateModel(tree, ins, fold, new Random(1));
+        System.out.println(eval.toSummaryString());
     }
     
 }
